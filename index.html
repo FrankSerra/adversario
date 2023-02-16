@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Adversario</title>
+        <link href="style/bootstrap.min.css" rel="stylesheet" />
+        <script src="script/jquery-3.6.3.min.js"></script>
+    </head>
+    <body>	
+      <script type="text/javascript" src="script/adversaries.js"></script>
+        <script type="text/javascript" src="script/icons.js"></script>
+        <script type="text/javascript" src="script/Adversary.js"></script>
+        <script type="text/javascript">
+          function populate() {
+            new Adversary($("div#root"), document.getElementById("adversary").value, document.getElementById("level").value).calc();
+            $("div#root").removeClass("invisible");
+            $("div#form").remove();
+          }
+
+          function removeSetup() {
+            $("#setup-header").first().parent("div.accordion-item").first().remove();
+          }
+        </script>
+
+      <!-- Form -->
+      <div id="form" class="container" onsubmit="populate()">
+        <form>
+          <div class="mb-3 mt-3">
+            <select id="adversary" class="form-select form-select-lg" aria-label="Adversary selection">
+              <option selected>Choose adversary...</option>
+              <option value="prussia">Brandenburg-Prussia</option>
+              <option value="england">England</option>
+              <option value="france">France (Plantation Colony)</option>
+              <option value="habsburg">Habsburg Monarchy (Livestock Colony)</option>
+              <option value="russia">Russia</option>
+              <option value="scotland">Scotland</option>
+              <option value="sweden">Sweden</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <select id="level" class="form-select form-select-lg" aria-label="Level">
+              <option selected>Choose level...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Go</button>
+        </form>
+      </div>
+
+      <!-- Display -->
+      <div id="root" class="container invisible">
+        <div class="row mt-1">
+          <div class="col text-center" id="name"></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col" id="loss"></div>
+          <div class="col" id="escalation"></div>
+        </div>
+        <div class="accordion mb-3" id="accordionGroup"></div>
+      </div>
+
+      <script src="script/bootstrap.min.js"></script>
+  </body>
+</html>
