@@ -97,7 +97,7 @@ const adversaries = {
         "build": [
           {
             "name": "Indentured Servants Earn Land",
-            "desc": "Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {T}.",
+            "desc": "Invader Build Cards affect matching lands without Invaders if they are adjacent to at least 2 {T}/{C}.",
             "level": 1
           },
           {
