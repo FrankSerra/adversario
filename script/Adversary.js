@@ -121,8 +121,18 @@ class Adversary {
 
         //Create cards
         var acc_body = acc_item.find("div.accordion-body").first();
-        var arr=this.data[section];
+        var arr=[];
 
+        //trim for level and check for replacements
+        for(var i=0; i<this.data[section].length; i++) {
+            if(this.data[section][i].level <= this.level) {
+                arr.push(this.data[section][i])
+
+                if(Object.keys(this.data[section][i]).includes("replaces")) {
+                    arr = arr.filter(item => {return item.name != this.data[section][i].replaces});
+                }
+            }
+        }
 
         //if setup section, add fear and invader deck 
         if(section == "setup") {
@@ -135,10 +145,7 @@ class Adversary {
 
         //iterate over section contents
         for(var i=0; i<arr.length; i++) {
-            var c = arr[i];
-            if(c.level <= this.level) {
-                acc_body.append(Adversary.createCard(c.name, c.desc));
-            }
+            acc_body.append(Adversary.createCard(arr[i].name, arr[i].desc));
         }
 
         //only add section if it has cards in it

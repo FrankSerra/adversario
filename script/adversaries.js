@@ -107,8 +107,9 @@ const adversaries = {
           },
           {
             "name": "High Immigration (II)",
-            "desc": "The High Immigration tile remains out the entire game.",
-            "level": 4
+            "desc": "The Invaders take the High Immigration Build action each Invader phase before Ravaging.",
+            "level": 4,
+            "replaces": "High Immigration (I)"
           },
           {
             "name": "Independent Resolve",
@@ -201,7 +202,7 @@ const adversaries = {
         ]
       },
 
-      "habsburg": {
+      "habsburglivestock": {
         "name": "Habsburg Monarchy (Livestock Colony)",
         "loss": {
           "name": "Irreparable Damage",
@@ -264,6 +265,89 @@ const adversaries = {
             "desc": "{T} in lands without {B} are Durable. They have +2 Health and any \"Destroy {T}\" effects instead deal 2 Damage per {T} they could destroy. Effects that say \"Destroy all {T}\" work normally.",
             "level": 4
           }
+        ]
+      },
+
+      "habsburgmining": {
+        "name": "Habsburg Mining Expedition",
+        "loss": {
+          "name": "Land Stripped Bare",
+          "desc": "At the end of the Fast Phase, the Invaders win if any land has at least 8 total Invaders/{B} (combined)."
+        },
+        "escalation": {
+          "name": "Mining Tunnels",
+          "desc": "After advancing Invader Cards: on each board, Explore in 2 lands whose terrains don't match a Ravage or Build Card (no source required)."
+        },
+        "fear": [
+          "3 / 3 / 3",
+          "3 / 3 / 4",
+          "3 / 4 / 4",
+          "4 / 4 / 4",
+          "4 / 5 / 4",
+          "4 / 5 / 4"
+        ],
+        "invader": [
+          {
+            "name": "Untapped Salt Deposits",
+            "desc": "111-2-Salt-22-33333",
+            "level": 4
+          }
+        ],
+        "setup": [
+          {
+            "name": "Miners Come From Far and Wide",
+            "desc": "Add 1 {E} in each land with no {Dahan}. Add 1 Disease and 1 {City} in the highest-numbered land with a {T} Setup symbol.",
+            "level": 2
+          },
+          {
+            "name": "Untapped Salt Deposits",
+            "desc": "Remove the Stage II \"Costal Lands\" card before randomly choosing Invader Cards. Place the \"Salt Deposits\" card as the second Stage II card as shown.",
+            "level": 4
+          },
+          {
+            "name": "The Empire Ascendant",
+            "desc": "On boards with 3 or fewer {B}: Add +1 {E} in each land successfully explored by the inital Explore. (max 2 lands per board per Explore Card)",
+            "level": 6
+          }
+        ],
+        "explore": [
+          {
+            "name": "The Empire Ascendant",
+            "desc": "On boards with 3 or fewer {B}: Add +1 {E} in each land successfully explored. (max 2 lands per board per Explore Card)",
+            "level": 6
+          }
+        ],
+        "build": [
+          {
+            "name": "Ceaseless Mining",
+            "desc": "In Mining Lands: During the Build Step, Build Cards cause Ravage Actions (instead of Build Actions). Disease and modifiers to Disease affect Ravage Actions as though they were Build Actions.",
+            "level": 1
+          },
+          {
+            "name": "Mining Boom (I)",
+            "desc": "After the Build Step, on each board: choose a land with {E}. Upgrade 1 {E} there.",
+            "level": 3
+          },
+          {
+            "name": "Mining Boom (II)",
+            "desc": "After the Build Step, on each board: choose a land with {E}. Build there, then upgrade 1 {E}. (if the chosen land is a Mining Land, build there normally)",
+            "level": 5,
+            "replaces": "Mining Boom (I)"
+          }
+        ],
+        "ravage": [
+          {
+            "name": "Avarice Rewarded",
+            "desc": "When {B} added by a Ravage Action would cascade, instead Upgrade 1 {E}/{T} (before the {Dahan} counterattack).",
+            "level": 1
+          },
+        ],
+        "other": [
+          {
+            "name": "Ceaseless Mining",
+            "desc": "Lands with 3+ Invaders are Mining Lands.",
+            "level": 1
+          },
         ]
       },
 
