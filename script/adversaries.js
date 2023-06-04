@@ -1,6 +1,7 @@
 const adversaries = {
       "prussia": {
         "name": "Brandenburg-Prussia",
+        "combiningnotes": "If Brandenburg-Prussia is level 2 or higher: Treat the level 2 Invader Deck modifier as \"Move the bottom-most Stage III card to just below the bottom-most Stage I card\" instead of its normal text.",
         "loss": {
             "name": "None",
             "desc": "No additional loss condition."
@@ -39,7 +40,7 @@ const adversaries = {
             "level": 5
           },
           {
-            "name": "Terrifying Efficient",
+            "name": "Terrifyingly Efficient",
             "desc": "3-222-3333",
             "level": 5
           }
@@ -129,13 +130,14 @@ const adversaries = {
       
       "france": {
         "name": "France (Plantation Colony)",
+        "combiningnotes": "If France is level 2 or higher: increase the starting pool of {T} by 1 per player per level of the paired Adversary.",
         "loss": {
           "name": "Sprawling Plantations",
           "desc": "Before Setup, return all but 7 {T} per player to the box. Invaders win if you ever cannot place a {T}."
         },
         "escalation": {
           "name": "Demand for New Cash Crops",
-          "desc": "After Exploring, on each board, pick a land of the shows terrain. If it has {T}/{C}, add 1 {B}. Otherwise, add 1 {T}."
+          "desc": "After Exploring, on each board, pick a land of the shown terrain. If it has {T}/{C}, add 1 {B}. Otherwise, add 1 {T}."
         },
         "fear": [
           "3 / 3 / 3",
@@ -423,6 +425,7 @@ const adversaries = {
 
       "scotland": {
         "name": "Scotland",
+        "combiningnotes": "If the other Adversary's setup instructions would add {C} to a Coastal land other than land #2, instead add {C} to an adjacent Inland land.",
         "loss": {
           "name": "Trade Hub",
           "desc": "If the number of Coastal lands with {C} is ever greater than (2 x # of boards), the Invaders win."

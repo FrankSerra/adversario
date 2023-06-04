@@ -13,7 +13,10 @@
         <script type="text/javascript" src="script/Adversary.js"></script>
         <script type="text/javascript">
           function populate() {
-            new Adversary($("div#root"), document.getElementById("adversary").value, document.getElementById("level").value).calc();
+            new Adversary($("div#root"), 
+                          document.getElementById("leadadversary").value, document.getElementById("leadlevel").value,
+                          document.getElementById("supportadversary").value, document.getElementById("supportlevel").value
+            ).calc();
             $("div#root").removeClass("invisible");
             $("div#form").remove();
           }
@@ -27,8 +30,8 @@
       <div id="form" class="container" onsubmit="populate()">
         <form>
           <div class="mb-3 mt-3">
-            <select id="adversary" class="form-select form-select-lg" aria-label="Adversary selection">
-              <option selected>Choose adversary...</option>
+            <select id="leadadversary" class="form-select form-select-lg" aria-label="Adversary selection (leader)" required="true">
+              <option selected>Choose lead adversary...</option>
               <option value="prussia">Brandenburg-Prussia</option>
               <option value="england">England</option>
               <option value="france">France (Plantation Colony)</option>
@@ -40,8 +43,32 @@
             </select>
           </div>
           <div class="mb-3">
-            <select id="level" class="form-select form-select-lg" aria-label="Level">
-              <option selected>Choose level...</option>
+            <select id="leadlevel" class="form-select form-select-lg" aria-label="Level (leader)" required="true">
+              <option selected>Choose lead level...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <select id="supportadversary" class="form-select form-select-lg" aria-label="Adversary selection (support)"  required="false">
+              <option selected>Choose support adversary...</option>
+              <option value="prussia">Brandenburg-Prussia</option>
+              <option value="england">England</option>
+              <option value="france">France (Plantation Colony)</option>
+              <option value="habsburgmining">Habsburg Mining Expedition</option>
+              <option value="habsburglivestock">Habsburg Monarchy (Livestock Colony)</option>
+              <option value="russia">Russia</option>
+              <option value="scotland">Scotland</option>
+              <option value="sweden">Sweden</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <select id="supportlevel" class="form-select form-select-lg" aria-label="Level (support)"  required="false">
+              <option selected>Choose support level...</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -62,6 +89,10 @@
         <div class="row mb-3">
           <div class="col" id="loss"></div>
           <div class="col" id="escalation"></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col" id="supportloss"></div>
+          <div class="col" id="supportescalation"></div>
         </div>
         <div class="accordion mb-3" id="accordionGroup"></div>
       </div>
