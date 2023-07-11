@@ -298,7 +298,7 @@ const adversaries = {
         "setup": [
           {
             "name": "Miners Come From Far and Wide",
-            "desc": "Add 1 {E} in each land with no {Dahan}. Add 1 Disease and 1 {City} in the highest-numbered land with a {T} Setup symbol.",
+            "desc": "Add 1 {E} in each land with no {Dahan}. Add 1 Disease and 1 {C} in the highest-numbered land with a {T} Setup symbol.",
             "level": 2
           },
           {
