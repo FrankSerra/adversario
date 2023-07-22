@@ -80,7 +80,7 @@ const adversaries = {
         "setup": [
           {
             "name": "Criminals and Malcontents",
-            "desc": "On each board, add 1 {T} to land #1 and 1 {T} to land #2.",
+            "desc": "On each board, add 1 {C} to land #1 and 1 {T} to land #2.",
             "level": 2
           },
           {
